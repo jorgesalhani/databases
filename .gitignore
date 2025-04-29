@@ -2,3 +2,4 @@ db_config.json
 *.log
 *__pycache__
 .venv
+.results.json

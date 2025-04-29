@@ -4,7 +4,7 @@ import json
 import os
 
 class Engine:
-  def __init__(self, config_path: str, log_path: str = 'db.log', result_path: str = 'result.json'):
+  def __init__(self, config_path: str, log_path: str = 'db.log', result_path: str = '.results.json'):
     """
     @params
       config_path: caminho para arquivo de configurações de DB
