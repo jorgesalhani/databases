@@ -1,10 +1,10 @@
-import psycopg2
 from psycopg2.extras import LoggingConnection
 import json
 import os
+import re
 
 class Engine:
-  def __init__(self, config_path: str, log_path: str = 'db.log', result_path: str = '.results.json'):
+  def __init__(self, config_path: str, log_path: str = 'logs/db.log', result_path: str = 'logs/.results.json'):
     """
     @params
       config_path: caminho para arquivo de configurações de DB
@@ -34,7 +34,9 @@ class Engine:
     self.cursor = self.connection.cursor()
     self.cursor.execute(query)
 
-    if ('SELECT' in query):
+    pattern = r'^(?!\s*--).*?\bselect\b'
+    selectQuery = re.findall(pattern, query, flags=re.IGNORECASE|re.MULTILINE)
+    if selectQuery:
       return self.fetchAll()
     
     self.cursor.close()
@@ -46,11 +48,12 @@ class Engine:
     columns = [desc[0] for desc in self.cursor.description]
     rows = [dict(zip(columns, row)) for row in result]
     
-    json_result = json.dumps(rows, default=str, indent=2)
-    result_file = open(self.result_path, 'w')
-    result_file.writelines(json_result)
+    json_result = json.dumps(rows, ensure_ascii=False, default=str, indent=2)
+    with open(self.result_path, 'w', encoding='utf-8-sig') as file:
+      file.writelines(json_result)
 
     return json_result
 
   def close(self):
     self.connection.close()
+    
