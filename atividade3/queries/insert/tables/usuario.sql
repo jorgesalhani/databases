@@ -1,0 +1,26 @@
+INSERT INTO Usuario (
+  CPF, Nome, Sobrenome, Telefone, Data_nascimento,
+  endereco_cidade, endereco_estado, endereco_pais,
+  endereco_CEP, endereco_bairro, endereco_pontoref,
+  sexo, email, senha
+) VALUES
+(10000000001, 'Anitta', 'Machado', 21999990001, '1993-03-30', 'Rio de Janeiro', 'RJ', 'Brasil', 22041001, 'Honório Gurgel', 'Próximo à estação', 'Feminino', 'anitta@example.com', 'senha123'),
+(10000000002, 'Ivete', 'Sangalo', 71999990002, '1972-05-27', 'Salvador', 'BA', 'Brasil', 40140110, 'Barra', 'Farol da Barra', 'Feminino', 'ivete@example.com', 'senha123'),
+(10000000003, 'Caetano', 'Veloso', 71999990003, '1942-08-07', 'Santo Amaro', 'BA', 'Brasil', 44200000, 'Centro', 'Praça principal', 'Masculino', 'caetano@example.com', 'senha123'),
+(10000000004, 'Maria', 'Bethânia', 71999990004, '1946-06-18', 'Santo Amaro', 'BA', 'Brasil', 44200001, 'Centro', 'Rua do Mercado', 'Feminino', 'bethania@example.com', 'senha123'),
+(10000000005, 'Sandy', 'Leah', 19999990005, '1983-01-28', 'Campinas', 'SP', 'Brasil', 13083971, 'Barão Geraldo', 'Perto da Unicamp', 'Feminino', 'sandy@example.com', 'senha123'),
+(10000000006, 'Junior', 'Lima', 19999990006, '1984-04-11', 'Campinas', 'SP', 'Brasil', 13083972, 'Taquaral', 'Lagoa do Taquaral', 'Masculino', 'junior@example.com', 'senha123'),
+(10000000007, 'Daniela', 'Mercury', 71999990007, '1965-07-28', 'Salvador', 'BA', 'Brasil', 40170100, 'Pituba', 'Praça Ana Lúcia Magalhães', 'Feminino', 'daniela@example.com', 'senha123'),
+(10000000008, 'Seu', 'Jorge', 21999990008, '1970-06-08', 'Rio de Janeiro', 'RJ', 'Brasil', 23020300, 'Belford Roxo', 'Rua das Palmeiras', 'Masculino', 'seujorge@example.com', 'senha123'),
+(10000000009, 'Ludmilla', 'Oliveira', 21999990009, '1995-04-24', 'Duque de Caxias', 'RJ', 'Brasil', 25085130, 'Centro', 'Próx ao Shopping', 'Feminino', 'ludmilla@example.com', 'senha123'),
+(10000000010, 'Ney', 'Matogrosso', 21999990010, '1941-08-01', 'Bela Vista', 'MS', 'Brasil', 79670000, 'Centro', 'Avenida Central', 'Masculino', 'ney@example.com', 'senha123'),
+(10000000011, 'Fernanda', 'Montenegro', 21999990011, '1929-10-16', 'Rio de Janeiro', 'RJ', 'Brasil', 20240060, 'Flamengo', 'Aterro do Flamengo', 'Feminino', 'fernanda@example.com', 'senha123'),
+(10000000012, 'Gal', 'Costa', 71999990012, '1945-09-26', 'Salvador', 'BA', 'Brasil', 40000000, 'Graça', 'Ladeira da Graça', 'Feminino', 'gal@example.com', 'senha123'),
+(10000000013, 'Marisa', 'Monte', 21999990013, '1967-07-01', 'Rio de Janeiro', 'RJ', 'Brasil', 20031050, 'Botafogo', 'Rua Voluntários da Pátria', 'Feminino', 'marisa@example.com', 'senha123'),
+(10000000014, 'Gilberto', 'Gil', 71999990014, '1942-06-26', 'Salvador', 'BA', 'Brasil', 40000001, 'Ondina', 'Orla marítima', 'Masculino', 'gil@example.com', 'senha123'),
+(10000000015, 'Paula', 'Fernandes', 31999990015, '1984-08-28', 'Sete Lagoas', 'MG', 'Brasil', 35700000, 'Centro', 'Praça Tiradentes', 'Feminino', 'paula@example.com', 'senha123'),
+(10000000016, 'Luiz', 'Melodia', 21999990016, '1951-01-07', 'Rio de Janeiro', 'RJ', 'Brasil', 20260130, 'São Cristóvão', 'Museu Nacional', 'Masculino', 'melodia@example.com', 'senha123'),
+(10000000017, 'Elis', 'Regina', 51999990017, '1945-03-17', 'Porto Alegre', 'RS', 'Brasil', 90000000, 'Menino Deus', 'Rua da Cultura', 'Feminino', 'elis@example.com', 'senha123'),
+(10000000018, 'Chico', 'Buarque', 21999990018, '1944-06-19', 'Rio de Janeiro', 'RJ', 'Brasil', 22290090, 'Laranjeiras', 'Próximo ao Largo do Machado', 'Masculino', 'chico@example.com', 'senha123'),
+(10000000019, 'Clarice', 'Falcão', 81999990019, '1989-10-23', 'Recife', 'PE', 'Brasil', 50030000, 'Boa Vista', 'Rua do Lima', 'Feminino', 'clarice@example.com', 'senha123'),
+(10000000020, 'Liniker', 'Barros', 16999990020, '1995-07-03', 'Araraquara', 'SP', 'Brasil', 14801000, 'Centro', 'Teatro Municipal', 'Outro', 'liniker@example.com', 'senha123');

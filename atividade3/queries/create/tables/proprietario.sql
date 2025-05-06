@@ -1,0 +1,7 @@
+CREATE TABLE PROPRIETARIO (
+    CPF          NUMERIC(11)   PRIMARY KEY,
+    n_conta     NUMERIC         NOT NULL UNIQUE,
+    agencia     NUMERIC         NOT NULL,
+    tipo            VARCHAR(20)  NOT NULL,
+    FOREIGN KEY (CPF) REFERENCES USUARIO(CPF)
+);
