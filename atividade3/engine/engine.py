@@ -4,16 +4,20 @@ import os
 import re
 
 class Engine:
-  def __init__(self, config_path: str, log_path: str = 'logs/db.log', result_path: str = 'logs/.results.json'):
+  def __init__(self, config_path: str, log_root_path: str = '.logs', log_filename: str = 'db.log', result_filename: str = 'results.json'):
     """
     @params
       config_path: caminho para arquivo de configurações de DB
       log_path: [db.log] caminho para arquivo de logs de DB
     """
+    if not os.path.exists(log_root_path):
+      os.makedirs(log_root_path)
+
     self.config_path = config_path
-    self.log_path = log_path
-    self.result_path = result_path
+    self.log_path = f'{log_root_path}/{log_filename}'
+    self.result_path = f'{log_root_path}/{result_filename}'
     self.connection : LoggingConnection = None
+
 
   def connect(self):
     if not os.path.exists(self.config_path):
