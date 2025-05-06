@@ -32,3 +32,21 @@ Arquivo 'db_config.json' na raiz do projeto no formato
   "port": "5432"
 }
 ```
+
+## Utilização
+Caminhar para arquivo da atividade
+```bash
+cd ./atividade3/
+```
+
+Inserir comando SQL em textBox.sql
+
+Executar script
+```bash
+python ./main.py
+```
+
+Todo comando SQL executado será salvo em 'logs/db.log'
+
+Caso SQL apresente comando de seleção (select), resultado estará presente no arquivo 'logs/.results.json'
+
