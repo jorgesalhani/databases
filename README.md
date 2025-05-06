@@ -46,7 +46,7 @@ Executar script
 python ./main.py
 ```
 
-Todo comando SQL executado será salvo em 'logs/db.log'
+Todo comando SQL executado será salvo [default: '.logs/db.log']
 
-Caso SQL apresente comando de seleção (select), resultado estará presente no arquivo 'logs/.results.json'
+Caso SQL apresente comando de seleção (select), resultado retornará em formato json [default: '.logs/results.json']
 
