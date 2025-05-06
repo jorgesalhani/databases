@@ -26,7 +26,7 @@ class Engine:
     DSN = f'postgresql://{db_config["user"]}:{db_config["password"]}@{db_config["host"]}/{db_config["dbname"]}'
     self.connection = LoggingConnection(DSN)
 
-    log_file = open(self.log_path, 'a')
+    log_file = open(self.log_path, 'a', encoding='utf-8')
     self.connection.initialize(log_file)
     self.connection.autocommit = True
 
