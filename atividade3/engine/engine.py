@@ -38,7 +38,7 @@ class Engine:
     self.cursor = self.connection.cursor()
     self.cursor.execute(query)
 
-    pattern = r'^(?!\s*--).*?\bselect\b'
+    pattern = r'^(?!\s*--).*?\bselect\b|^(?!\s*--).*?\bshow\b'
     selectQuery = re.findall(pattern, query, flags=re.IGNORECASE|re.MULTILINE)
     if selectQuery:
       return self.fetchAll()
