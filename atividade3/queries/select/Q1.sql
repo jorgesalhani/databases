@@ -131,14 +131,11 @@ CREATE TABLE RESERVA_HOSPEDE_PROPRIEDADE (
 
 
 CREATE TABLE DATA_RESERVA (
-    id_data     NUMERIC     PRIMARY KEY,
-    id_reserva NUMERIC     NOT NULL,
-    data_checkin   DATE        NOT NULL,
-    data_checkout  DATE        NOT NULL,
-
-    FOREIGN KEY (id_reserva) REFERENCES RESERVA(id_reserva),
-
-    CHECK (data_checkout > data_checkin)
+    id_data         NUMERIC     PRIMARY KEY,
+    id_reserva      NUMERIC     NOT NULL,
+    periodo         DATERANGE   NOT NULL,
+    
+    FOREIGN KEY (id_reserva) REFERENCES RESERVA(id_reserva)
 );
 
 
@@ -153,3 +150,38 @@ CREATE TABLE MENSAGEM (
     FOREIGN KEY (CPF_remetente)     REFERENCES USUARIO(CPF),
     FOREIGN KEY (CPF_destinatario)  REFERENCES USUARIO(CPF)
 );
+
+CREATE OR REPLACE FUNCTION verificar_conflito_datas()
+RETURNS TRIGGER AS $$
+DECLARE
+    id_prop NUMERIC;
+BEGIN
+    -- Pega o id_propriedade associado à reserva
+    SELECT id_propriedade INTO id_prop
+    FROM RESERVA
+    WHERE id_reserva = NEW.id_reserva;
+
+    -- Verifica se já existe alguma data que se sobrepõe para a mesma propriedade
+    IF EXISTS (
+        SELECT 1
+        FROM DATA_RESERVA dr
+        JOIN RESERVA r ON dr.id_reserva = r.id_reserva
+        WHERE r.id_propriedade = id_prop
+          AND dr.periodo && NEW.periodo  -- operador de overlap de ranges
+    ) THEN
+        RAISE EXCEPTION 'Conflito de datas: já existe uma reserva nesse período para esta propriedade.';
+    END IF;
+
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trigger_verificar_conflito_datas
+BEFORE INSERT ON DATA_RESERVA
+FOR EACH ROW
+EXECUTE FUNCTION verificar_conflito_datas();
+
+
+ALTER TABLE RESERVA
+ADD CONSTRAINT chk_cpf_diferente
+CHECK (CPF_hospede <> (SELECT CPF_proprietario FROM PROPRIEDADE WHERE id_propriedade = RESERVA.id_propriedade));

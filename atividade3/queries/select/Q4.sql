@@ -2,93 +2,58 @@
 
 -- a. Todos os atributos-chave das relações envolvidas
 -- ===================================================
-SELECT
-  prop.nome, prop.id_propriedade, res.id_reserva, dres.id_data
-FROM 
-  Propriedade as prop
-INNER JOIN 
-  Reserva as res
-ON
-  prop.id_propriedade = res.id_propriedade
-INNER JOIN
-  Data_reserva as dres
-ON 
-  dres.id_reserva = res.id_reserva
-WHERE
-  dres.data_checkin > DATE ('2025-04-24');
+SELECT 
+    r.id_reserva, 
+    r.CPF_hospede, 
+    r.id_propriedade, 
+    p.CPF_proprietario AS proprietario_CPF,
+    h.CPF AS hospede_CPF
+FROM RESERVA r
+JOIN DATA_RESERVA dr ON r.id_reserva = dr.id_reserva
+JOIN PROPRIEDADE p ON r.id_propriedade = p.id_propriedade
+JOIN HOSPEDE h ON r.CPF_hospede = h.CPF
+WHERE lower(dr.periodo) >= '2025-04-24';
 
 
 -- b. O total de dias locado
 -- ===================================================
-SELECT
-  prop.nome,
-  prop.id_propriedade,
-  dres.data_checkout - dres.data_checkin as total_dias_locados
-FROM 
-  Propriedade as prop
-INNER JOIN 
-  Reserva as res
-ON
-  prop.id_propriedade = res.id_propriedade
-INNER JOIN
-  Data_reserva as dres
-ON 
-  dres.id_reserva = res.id_reserva
-WHERE
-  dres.data_checkin > DATE ('2025-04-24');
+SELECT 
+    r.id_reserva, 
+    r.CPF_hospede, 
+    r.id_propriedade, 
+    dr.periodo,
+    (upper(dr.periodo) - lower(dr.periodo)) AS total_dias_locado
+FROM RESERVA r
+JOIN DATA_RESERVA dr ON r.id_reserva = dr.id_reserva
+WHERE lower(dr.periodo) >= '2025-04-24';
+
 
 -- c. O nome do proprietário e do hóspede
 -- ===================================================
-SELECT
-  usrHosp.nome as hospede_nome,
-  usrHosp.sobrenome as hospede_sobrenome,
-  usrProp.nome as proprietario_nome,
-  usrProp.sobrenome as proprietario_sobrenome,
-  rhp.id_propriedade as id_propriedade,
-  rhp.id_reserva as id_reserva
-FROM
-  RESERVA_HOSPEDE_PROPRIEDADE as rhp
-INNER JOIN
-  Reserva as res
-ON 
-  res.id_reserva = rhp.id_reserva
-INNER JOIN
-  Usuario as usrHosp
-ON 
-  usrHosp.cpf = rhp.CPF_hospede
-INNER JOIN
-  Propriedade as prop
-ON 
-  prop.id_propriedade = rhp.id_propriedade
-INNER JOIN
-  Usuario as usrProp
-ON 
-  usrProp.cpf = prop.CPF_proprietario
-INNER JOIN
-  Data_reserva as dres
-ON
- dres.id_reserva = res.id_reserva
-where
-  dres.data_checkin > DATE ('2025-04-24');
+SELECT 
+    r.id_reserva, 
+    u_hospede.nome AS nome_hospede, 
+    u_proprietario.nome AS nome_proprietario, 
+    dr.periodo
+FROM RESERVA r
+JOIN DATA_RESERVA dr ON r.id_reserva = dr.id_reserva
+JOIN PROPRIEDADE p ON r.id_propriedade = p.id_propriedade
+JOIN HOSPEDE h ON r.CPF_hospede = h.CPF
+JOIN USUARIO u_hospede ON h.CPF = u_hospede.CPF
+JOIN USUARIO u_proprietario ON p.CPF_proprietario = u_proprietario.CPF
+WHERE lower(dr.periodo) >= '2025-04-24';
 
 -- d. O valor da diária
-SELECT
-  prop.nome,
-  prop.id_propriedade,
-  dres.data_checkout - dres.data_checkin as total_dias_locados,
-  ROUND(
-    (prop.preco_noite ) + (prop.taxa_limpeza / ((dres.data_checkout - dres.data_checkin ))), 
-    2
-  ) as valor_diaria
-FROM 
-  Propriedade as prop
-INNER JOIN 
-  Reserva as res
-ON
-  prop.id_propriedade = res.id_propriedade
-INNER JOIN
-  Data_reserva as dres
-ON 
-  dres.id_reserva = res.id_reserva
-WHERE
-  dres.data_checkin > DATE ('2025-04-24');
+SELECT 
+    r.id_reserva, 
+    u_hospede.nome AS nome_hospede, 
+    u_proprietario.nome AS nome_proprietario, 
+    dr.periodo,
+    p.preco_noite AS valor_diaria
+FROM RESERVA r
+JOIN DATA_RESERVA dr ON r.id_reserva = dr.id_reserva
+JOIN PROPRIEDADE p ON r.id_propriedade = p.id_propriedade
+JOIN HOSPEDE h ON r.CPF_hospede = h.CPF
+JOIN USUARIO u_hospede ON h.CPF = u_hospede.CPF
+JOIN USUARIO u_proprietario ON p.CPF_proprietario = u_proprietario.CPF
+WHERE lower(dr.periodo) >= '2025-04-24';

@@ -6,7 +6,7 @@ connection.connect()
 result = connection.connect()
 print(result)
 
-textBox_path = '/home/catarinamoreiralima/Área de trabalho/Facul/bd/databases/atividade3/queries/select/Q6.sql' 
+textBox_path = '/home/catarinamoreiralima/Área de trabalho/Facul/bd/databases/atividade3/queries/select/Q4.sql' 
 queries_create_file = open(textBox_path, 'r', encoding='utf-8')
 queries = queries_create_file.read()
 
