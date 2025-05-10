@@ -2,6 +2,28 @@
 
 -- a. Quais os usuários que são tanto anfitriões quanto locatários
 -- ===============================================================
+SELECT 
+  usr.nome,
+  usr.sobrenome,
+  prop.id_propriedade,
+  prop.nome AS nome_propriedade,
+  res.id_reserva
+FROM
+  RESERVA_HOSPEDE_PROPRIEDADE as rhp
+INNER JOIN
+  RESERVA as res
+ON
+  rhp.id_reserva = res.id_reserva
+INNER JOIN
+  PROPRIEDADE as prop
+ON
+  rhp.id_propriedade = prop.id_propriedade
+INNER JOIN
+  USUARIO as usr
+ON
+  usr.CPF = res.CPF_hospede
+WHERE 
+  res.CPF_hospede = prop.CPF_proprietario
 
 -- b. Quais anfitriões tiveram pelo menos 5 locações, mostrando seu nome, sua cidade e
 -- quantidade de imóveis dos quais ele é dono, e o total de locações
