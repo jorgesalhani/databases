@@ -1,0 +1,9 @@
+CREATE TABLE UNIDADE_ESCOLA (
+    Nome_Unidade VARCHAR(50) NOT NULL,
+    Cidade VARCHAR(50) NOT NULL,
+    Estado VARCHAR(2) NOT NULL,
+    Pais VARCHAR(30) NOT NULL,
+    Bloco_Predio VARCHAR(10) NOT NULL,
+
+    PRIMARY KEY (Nome_Unidade)
+);

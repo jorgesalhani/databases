@@ -6,5 +6,4 @@ CREATE TABLE DISCIPLINA (
 
     PRIMARY KEY (Codigo_Disc),
     FOREIGN KEY (Nome_Unidade) REFERENCES UNIDADE_ESCOLA (Nome_Unidade)
-
 );
