@@ -1,0 +1,4 @@
+CREATE TABLE REGRA  (
+    Tipo VARCHAR(50),
+    PRIMARY KEY (Tipo)
+);

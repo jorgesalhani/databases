@@ -1,0 +1,4 @@
+CREATE TABLE MATERIAIS(
+    Tipo VARCHAR(50),
+    PRIMARY KEY (Tipo)
+);
