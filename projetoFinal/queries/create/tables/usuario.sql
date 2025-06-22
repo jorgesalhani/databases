@@ -1,5 +1,4 @@
-CREATE TABLE USUARIO (
-    CPF                         NUMERIC(11)    NOT NULL,     
+CREATE TABLE USUARIO (    
     Nome                        VARCHAR(50)    NOT NULL,     
     Sobrenome                   VARCHAR(50)    NOT NULL,      
     Telefone                    NUMERIC(15)    NOT NULL,     
