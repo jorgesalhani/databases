@@ -23,7 +23,7 @@ INSERT INTO Usuario (
 (10000000017, 'Elis', 'Regina', 51999990017, '1945-03-17', 'Porto Alegre', 'RS', 'Brasil', 90000000, 'Menino Deus', 'Rua da Cultura', 'Feminino', 'elis@example.com', 'senha123'),
 (10000000018, 'Chico', 'Buarque', 21999990018, '1944-06-19', 'Rio de Janeiro', 'RJ', 'Brasil', 22290090, 'Laranjeiras', 'Próximo ao Largo do Machado', 'Masculino', 'chico@example.com', 'senha123'),
 (10000000019, 'Clarice', 'Falcão', 81999990019, '1989-10-23', 'Recife', 'PE', 'Brasil', 50030000, 'Boa Vista', 'Rua do Lima', 'Feminino', 'clarice@example.com', 'senha123'),
-(10000000020, 'Liniker', 'Barros', 16999990020, '1995-07-03', 'Araraquara', 'SP', 'Brasil', 14801000, 'Centro', 'Teatro Municipal', 'Outro', 'liniker@example.com', 'senha123');
+(10000000020, 'Liniker', 'Barros', 16999990020, '2001-07-03', 'Araraquara', 'SP', 'Brasil', 14801000, 'Centro', 'Teatro Municipal', 'Outro', 'liniker@example.com', 'senha123');
 
 
 INSERT INTO Proprietario (CPF, n_conta, agencia, tipo) VALUES
