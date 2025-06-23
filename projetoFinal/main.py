@@ -6,7 +6,7 @@ connection.connect()
 result = connection.connect()
 print(result)
 
-textBox_path = './textBox.sql' 
+textBox_path = './queries/create/createAll.sql' 
 queries_create_file = open(textBox_path, 'r', encoding='utf-8')
 queries = queries_create_file.read()
 

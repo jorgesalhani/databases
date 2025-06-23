@@ -19,13 +19,16 @@ CREATE TABLE USUARIO (
 );
 
 CREATE TABLE ALUNO (
+    Nome_Unidade VARCHAR(50) NOT NULL,
     Nome VARCHAR(50),
     Sobrenome VARCHAR(50),
-    Telefone NUMERIC(15),
-    CONSTRAINT pk_aluno PRIMARY KEY (Nome, Sobrenome, Telefone),
-    CONSTRAINT fk_aluno_usuario FOREIGN KEY (Nome, Sobrenome, Telefone)
+    Telefone VARCHAR(20),
+    PRIMARY KEY (Nome, Sobrenome, Telefone),
+    FOREIGN KEY (Nome, Sobrenome, Telefone)
         REFERENCES Usuario (Nome, Sobrenome, Telefone)
-        ON DELETE CASCADE
+        ON DELETE CASCADE,
+    FOREIGN KEY (Nome_Unidade)
+    REFERENCES UNIDADEESCOLA (Nome_Unidade)
 );
 
 CREATE TABLE SALA(
@@ -56,16 +59,20 @@ CREATE TABLE DISCIPLINA (
 );
 
 CREATE TABLE PROFESSOR (
+    Nome_Unidade VARCHAR(50) NOT NULL,
     Nome VARCHAR(50),
     Sobrenome VARCHAR(50),
-    Telefone NUMERIC(15),
-    Titulo VARCHAR(100),
-    Especialidade VARCHAR(100),
-    CONSTRAINT pk_professor PRIMARY KEY (Nome, Sobrenome, Telefone),
-    CONSTRAINT fk_prof_usr FOREIGN KEY (Nome, Sobrenome, Telefone)
+    Telefone VARCHAR(20),
+    Titulo VARCHAR(20),
+    Especialidade VARCHAR (30), 
+    PRIMARY KEY (Nome, Sobrenome, Telefone),
+    FOREIGN KEY (Nome, Sobrenome, Telefone)
         REFERENCES Usuario (Nome, Sobrenome, Telefone)
-        ON DELETE CASCADE
+        ON DELETE CASCADE,
+    FOREIGN KEY (Nome_Unidade)
+    REFERENCES UNIDADEESCOLA (Nome_Unidade)
 );
+
 
 
 CREATE TABLE RESPONSAVEL (
@@ -332,3 +339,4 @@ CREATE TABLE PREREQDISCIPLINA (
         REFERENCES Curso(NomeCurso, Codigo_Curso)
         ON DELETE CASCADE
 );
+

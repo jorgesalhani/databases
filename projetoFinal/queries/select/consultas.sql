@@ -1,4 +1,4 @@
--- Todos os alunos matriculados na ma
+-- Todos os alunos matriculados na materia C001
 
 SELECT Nome, Sobrenome, Telefone FROM Matricula 
 WHERE Cod_disciplina = 'C001' AND Semestre = 2 AND Ano_Letivo = 2024;
@@ -21,6 +21,25 @@ WHERE MN.Nome = 'Ana'
   AND MN.Telefone = 11987654321
   AND M.Semestre = 1
   AND M.Ano_Letivo = 2024
+
+
+--Historico escolar da Ana Silva
+SELECT 
+  M.Cod_disciplina,
+  AVG(N.Nota) AS Media_Nota
+FROM MATRICULA M
+JOIN MATRICULANOTA N
+  ON M.Nome = N.Nome
+  AND M.Sobrenome = N.Sobrenome
+  AND M.Telefone = N.Telefone
+  AND M.Cod_disciplina = N.Cod_disciplina
+  AND M.Dia_Matricula = N.Dia_Matricula
+  AND M.Mes_Matricula = N.Mes_Matricula
+  AND M.Ano_Matricula = N.Ano_Matricula
+WHERE M.Nome = 'Ana'
+  AND M.Sobrenome = 'Silva'
+GROUP BY M.Cod_disciplina;
+
 
 -- 5 melhores alunos conforme media semestral de todos os anos
 
@@ -111,9 +130,10 @@ WHERE NOT EXISTS ( -- verifica se tem 1 que esta em curso e nao na selecao de ma
 );
 
 
--- comparacao desempenho alunos com bolsa e sem bolsa para a materia d003
+-- comparacao desempenho alunos com bolsa e sem bolsa para todas as disciplinas
 
 SELECT 
+  M.Cod_disciplina,
   CASE 
     WHEN M.Bolsa = 1 THEN 'Com Bolsa'
     ELSE 'Sem Bolsa'
@@ -128,9 +148,44 @@ JOIN MATRICULANOTA N
   AND M.Dia_Matricula = N.Dia_Matricula
   AND M.Mes_Matricula = N.Mes_Matricula
   AND M.Ano_Matricula = N.Ano_Matricula
-WHERE M.Cod_disciplina = 'D003'
 GROUP BY 
+  M.Cod_disciplina,
   CASE 
     WHEN M.Bolsa = 1 THEN 'Com Bolsa'
     ELSE 'Sem Bolsa'
-  END;
+  END
+ORDER BY M.Cod_disciplina, Situacao_Bolsa;
+
+
+-- quantidade de alunos matriculados em cada materia em 2024/1
+
+SELECT 
+    Cod_disciplina,
+    COUNT(*) AS Total_Alunos
+FROM 
+    MATRICULA
+WHERE 
+    Semestre = 1
+    AND Ano_Letivo = 2024
+GROUP BY 
+    Cod_disciplina;
+
+
+-- os 10 professores que mais ministram disciplinas
+
+SELECT 
+    P.Nome,
+    P.Sobrenome,
+    P.Telefone,
+    COUNT(M.Cod_disciplina) AS Total_Disciplinas
+FROM 
+    MINISTRA M
+JOIN 
+    PROFESSOR P ON M.Nome = P.Nome 
+                AND M.Sobrenome = P.Sobrenome 
+                AND M.Telefone = P.Telefone
+GROUP BY 
+    P.Nome, P.Sobrenome, P.Telefone
+ORDER BY 
+    Total_Disciplinas DESC
+LIMIT 10;
