@@ -622,3 +622,514 @@ INSERT INTO PREREQDISCIPLINA (NomeCurso, CodigoCurso, CodigoDiscPre) VALUES
 ('História da Arte', 'C012', 'D042'),
 ('Literatura Brasileira', 'C013', 'D043'),
 ('Literatura Brasileira', 'C013', 'D044');
+
+INSERT INTO CURSODISCIPLINA (NomeCurso, Codigo_Curso, Codigo_Disc) VALUES
+-- Assigning Disciplines D001-D005 to Ciências Exatas (C001)
+('Ciências Exatas', 'C001', 'D001'),
+('Ciências Exatas', 'C001', 'D002'),
+('Ciências Exatas', 'C001', 'D003'),
+('Ciências Exatas', 'C001', 'D004'),
+('Ciências Exatas', 'C001', 'D005'),
+
+-- Assigning Disciplines D006-D010 to História Moderna (C002)
+('História Moderna', 'C002', 'D006'),
+('História Moderna', 'C002', 'D007'),
+('História Moderna', 'C002', 'D008'),
+('História Moderna', 'C002', 'D009'),
+('História Moderna', 'C002', 'D010'),
+
+-- Assigning Disciplines D011-D015 to Letras Português (C003)
+('Letras Português', 'C003', 'D011'),
+('Letras Português', 'C003', 'D012'),
+('Letras Português', 'C003', 'D013'),
+('Letras Português', 'C003', 'D014'),
+('Letras Português', 'C003', 'D015'),
+
+-- Assigning Disciplines D016-D020 to Geografia Urbana (C004)
+('Geografia Urbana', 'C004', 'D016'),
+('Geografia Urbana', 'C004', 'D017'),
+('Geografia Urbana', 'C004', 'D018'),
+('Geografia Urbana', 'C004', 'D019'),
+('Geografia Urbana', 'C004', 'D020'),
+
+-- Assigning Disciplines D021-D025 to Biologia Molecular (C005)
+('Biologia Molecular', 'C005', 'D021'),
+('Biologia Molecular', 'C005', 'D022'),
+('Biologia Molecular', 'C005', 'D023'),
+('Biologia Molecular', 'C005', 'D024'),
+('Biologia Molecular', 'C005', 'D025'),
+
+-- Assigning Disciplines D026-D030 to Física Aplicada (C006)
+('Física Aplicada', 'C006', 'D026'),
+('Física Aplicada', 'C006', 'D027'),
+('Física Aplicada', 'C006', 'D028'),
+('Física Aplicada', 'C006', 'D029'),
+('Física Aplicada', 'C006', 'D030'),
+
+-- Assigning Disciplines D031-D035 to Química Orgânica (C007)
+('Química Orgânica', 'C007', 'D031'),
+('Química Orgânica', 'C007', 'D032'),
+('Química Orgânica', 'C007', 'D033'),
+('Química Orgânica', 'C007', 'D034'),
+('Química Orgânica', 'C007', 'D035'),
+
+-- Assigning Disciplines D036-D040 to Inglês Avançado (C008)
+('Inglês Avançado', 'C008', 'D036'),
+('Inglês Avançado', 'C008', 'D037'),
+('Inglês Avançado', 'C008', 'D038'),
+('Inglês Avançado', 'C008', 'D039'),
+('Inglês Avançado', 'C008', 'D040'),
+
+-- Assigning Disciplines D041-D045 to Educação Física (C009)
+('Educação Física', 'C009', 'D041'),
+('Educação Física', 'C009', 'D042'),
+('Educação Física', 'C009', 'D043'),
+('Educação Física', 'C009', 'D044'),
+('Educação Física', 'C009', 'D045'),
+
+-- Assigning Disciplines D046-D050 to Sociologia Contemporânea (C010)
+('Sociologia Contemporânea', 'C010', 'D046'),
+('Sociologia Contemporânea', 'C010', 'D047'),
+('Sociologia Contemporânea', 'C010', 'D048'),
+('Sociologia Contemporânea', 'C010', 'D049'),
+('Sociologia Contemporânea', 'C010', 'D050');
+
+INSERT INTO FUNCIONARIO (Nome, Sobrenome, Telefone) VALUES
+('Ana', 'Silva', 11987654321),
+('Bruno', 'Souza', 21998765432),
+('Carla', 'Oliveira', 31991234567),
+('Daniel', 'Lima', 41993456789),
+('Eduarda', 'Santos', 51994567890);
+
+INSERT INTO INFRAESTRUTURA (Tipo) VALUES
+('Laboratório de Informática'),
+('Laboratório de Física'),
+('Laboratório de Química'),
+('Laboratório de Biologia'),
+('Sala de Aula'),
+('Auditório'),
+('Biblioteca'),
+('Sala de Reuniões'),
+('Ginásio Poliesportivo'),
+('Quadra de Esportes'),
+('Cantina'),
+('Estacionamento'),
+('Sala de Professores'),
+('Centro de Computação'),
+('Laboratório de Idiomas'),
+('Sala de Música'),
+('Sala de Artes'),
+('Laboratório de Robótica'),
+('Sala de Estudos'),
+('Auditório para Eventos'),
+('Sala de Vídeo'),
+('Laboratório de Matemática'),
+('Sala de Informática Avançada'),
+('Sala de Atendimento Psicopedagógico'),
+('Auditório para Conferências'),
+('Sala de Jogos'),
+('Sala de Atendimento Médico'),
+('Sala de Coordenação Pedagógica'),
+('Sala de Atendimento Administrativo'),
+('Laboratório de Engenharia');
+
+INSERT INTO INFRADISCIPLINA (Codigo_Disc, Tipo_Infra) VALUES
+-- D001
+('D001', 'Laboratório de Informática'),
+('D001', 'Sala de Aula'),
+('D001', 'Biblioteca'),
+
+-- D002
+('D002', 'Laboratório de Física'),
+('D002', 'Sala de Aula'),
+
+-- D003
+('D003', 'Laboratório de Química'),
+('D003', 'Laboratório de Biologia'),
+('D003', 'Sala de Aula'),
+
+-- D004
+('D004', 'Sala de Aula'),
+('D004', 'Auditório'),
+
+-- D005
+('D005', 'Laboratório de Informática'),
+('D005', 'Sala de Aula'),
+
+-- D006
+('D006', 'Auditório'),
+('D006', 'Sala de Reuniões'),
+
+-- D007
+('D007', 'Biblioteca'),
+('D007', 'Sala de Aula'),
+
+-- D008
+('D008', 'Laboratório de Robótica'),
+('D008', 'Sala de Aula'),
+('D008', 'Centro de Computação'),
+
+-- D009
+('D009', 'Sala de Música'),
+('D009', 'Sala de Artes'),
+
+-- D010
+('D010', 'Sala de Aula'),
+('D010', 'Auditório'),
+
+-- D011
+('D011', 'Laboratório de Informática'),
+('D011', 'Sala de Aula'),
+('D011', 'Biblioteca'),
+
+-- D012
+('D012', 'Laboratório de Física'),
+('D012', 'Sala de Aula'),
+
+-- D013
+('D013', 'Laboratório de Química'),
+('D013', 'Sala de Aula'),
+
+-- D014
+('D014', 'Sala de Aula'),
+('D014', 'Auditório'),
+
+-- D015
+('D015', 'Laboratório de Biologia'),
+('D015', 'Sala de Aula'),
+
+-- D016
+('D016', 'Laboratório de Informática'),
+('D016', 'Centro de Computação'),
+
+-- D017
+('D017', 'Sala de Aula'),
+('D017', 'Biblioteca'),
+
+-- D018
+('D018', 'Laboratório de Física'),
+('D018', 'Sala de Aula'),
+
+-- D019
+('D019', 'Sala de Aula'),
+('D019', 'Auditório'),
+
+-- D020
+('D020', 'Laboratório de Química'),
+('D020', 'Sala de Aula'),
+
+-- D021
+('D021', 'Laboratório de Biologia'),
+('D021', 'Sala de Aula'),
+
+-- D022
+('D022', 'Sala de Aula'),
+('D022', 'Biblioteca'),
+
+-- D023
+('D023', 'Laboratório de Robótica'),
+('D023', 'Centro de Computação'),
+
+-- D024
+('D024', 'Sala de Aula'),
+('D024', 'Auditório'),
+
+-- D025
+('D025', 'Laboratório de Física'),
+('D025', 'Sala de Aula'),
+
+-- D026
+('D026', 'Sala de Aula'),
+('D026', 'Biblioteca'),
+
+-- D027
+('D027', 'Laboratório de Informática'),
+('D027', 'Centro de Computação'),
+
+-- D028
+('D028', 'Sala de Aula'),
+('D028', 'Auditório'),
+
+-- D029
+('D029', 'Laboratório de Química'),
+('D029', 'Sala de Aula'),
+
+-- D030
+('D030', 'Laboratório de Biologia'),
+('D030', 'Sala de Aula'),
+
+-- D031
+('D031', 'Sala de Aula'),
+('D031', 'Biblioteca'),
+
+-- D032
+('D032', 'Auditório'),
+('D032', 'Sala de Reuniões'),
+
+-- D033
+('D033', 'Laboratório de Física'),
+('D033', 'Sala de Aula'),
+
+-- D034
+('D034', 'Sala de Aula'),
+('D034', 'Biblioteca'),
+
+-- D035
+('D035', 'Laboratório de Informática'),
+('D035', 'Centro de Computação'),
+
+-- D036
+('D036', 'Sala de Aula'),
+('D036', 'Auditório'),
+
+-- D037
+('D037', 'Laboratório de Química'),
+('D037', 'Sala de Aula'),
+
+-- D038
+('D038', 'Laboratório de Biologia'),
+('D038', 'Sala de Aula'),
+
+-- D039
+('D039', 'Sala de Aula'),
+('D039', 'Biblioteca'),
+
+-- D040
+('D040', 'Auditório'),
+('D040', 'Sala de Reuniões'),
+
+-- D041
+('D041', 'Laboratório de Informática'),
+('D041', 'Centro de Computação'),
+
+-- D042
+('D042', 'Sala de Aula'),
+('D042', 'Biblioteca'),
+
+-- D043
+('D043', 'Laboratório de Física'),
+('D043', 'Sala de Aula'),
+
+-- D044
+('D044', 'Sala de Aula'),
+('D044', 'Auditório'),
+
+-- D045
+('D045', 'Laboratório de Química'),
+('D045', 'Sala de Aula'),
+
+-- D046
+('D046', 'Laboratório de Biologia'),
+('D046', 'Sala de Aula'),
+
+-- D047
+('D047', 'Sala de Aula'),
+('D047', 'Biblioteca'),
+
+-- D048
+('D048', 'Auditório'),
+('D048', 'Sala de Reuniões'),
+
+-- D049
+('D049', 'Laboratório de Informática'),
+('D049', 'Centro de Computação'),
+
+-- D050
+('D050', 'Sala de Aula'),
+('D050', 'Biblioteca');
+
+INSERT INTO MATERIAL (Tipo) VALUES
+('Livro Didático'),
+('Apostila'),
+('Livro de Referência'),
+('Caderno de Exercícios'),
+('Revista Científica'),
+('Artigo Acadêmico'),
+('Vídeo Aula'),
+('Slides de Apresentação'),
+('Livro Digital'),
+('Material Online'),
+('Software Educacional'),
+('Simulador'),
+('Mapa'),
+('Atlas'),
+('Gráfico'),
+('Tabela'),
+('Planilha'),
+('Manual Técnico'),
+('Cartilha'),
+('Infográfico'),
+('Podcast'),
+('Webinar'),
+('Laboratório Virtual'),
+('Experimento Prático'),
+('Kit Didático'),
+('Modelo 3D'),
+('Ferramenta Interativa'),
+('Plataforma EAD'),
+('Questionário'),
+('Prova'),
+('Trabalho Prático'),
+('Projeto de Pesquisa'),
+('Resumo'),
+('Lista de Exercícios'),
+('Livro de Literatura'),
+('Material Multimídia'),
+('Aula Expositiva'),
+('Palestra'),
+('Seminário'),
+('Debate');
+
+INSERT INTO MATERIALDISCIPLINA (Codigo_Disc, Tipo_Material) VALUES
+('D001', 'Livro Didático'),
+('D002', 'Apostila'),
+('D003', 'Livro de Referência'),
+('D004', 'Caderno de Exercícios'),
+('D005', 'Revista Científica'),
+('D006', 'Artigo Acadêmico'),
+('D007', 'Vídeo Aula'),
+('D008', 'Slides de Apresentação'),
+('D009', 'Livro Digital'),
+('D010', 'Material Online'),
+('D011', 'Software Educacional'),
+('D012', 'Simulador'),
+('D013', 'Mapa'),
+('D014', 'Atlas'),
+('D015', 'Gráfico'),
+('D016', 'Tabela'),
+('D017', 'Planilha'),
+('D018', 'Manual Técnico'),
+('D019', 'Cartilha'),
+('D020', 'Infográfico'),
+('D021', 'Podcast'),
+('D022', 'Webinar'),
+('D023', 'Laboratório Virtual'),
+('D024', 'Experimento Prático'),
+('D025', 'Kit Didático'),
+('D026', 'Modelo 3D'),
+('D027', 'Ferramenta Interativa'),
+('D028', 'Plataforma EAD'),
+('D029', 'Questionário'),
+('D030', 'Prova'),
+('D031', 'Trabalho Prático'),
+('D032', 'Projeto de Pesquisa'),
+('D033', 'Resumo'),
+('D034', 'Lista de Exercícios'),
+('D035', 'Livro de Literatura'),
+('D036', 'Material Multimídia'),
+('D037', 'Aula Expositiva'),
+('D038', 'Palestra'),
+('D039', 'Seminário'),
+('D040', 'Debate'),
+('D041', 'Livro Didático'),
+('D042', 'Apostila'),
+('D043', 'Livro de Referência'),
+('D044', 'Caderno de Exercícios'),
+('D045', 'Revista Científica'),
+('D046', 'Artigo Acadêmico'),
+('D047', 'Vídeo Aula'),
+('D048', 'Slides de Apresentação'),
+('D049', 'Livro Digital'),
+('D050', 'Material Online');
+
+INSERT INTO MATRICULA (
+  Nome, Sobrenome, Telefone, Cod_disciplina,
+  Dia_Matricula, Mes_Matricula, Ano_Matricula,
+  Semestre, Ano_Letivo, Bolsa, Desconto, TAXA
+) VALUES
+('Ana', 'Silva', 11987654321, 'D001', 10, 2, 2025, 1, 2025, '1', 0.30, 1050.00),
+('Bruno', 'Souza', 21998765432, 'D002', 12, 3, 2025, 2, 2025, '0', 0.00, 1500.00),
+('Carla', 'Oliveira', 31991234567, 'D003', 5, 1, 2025, 1, 2025, '0', 0.10, 1350.00),
+('Daniel', 'Lima', 41993456789, 'D004', 20, 2, 2025, 2, 2025, '1', 0.50, 750.00),
+('Eduarda', 'Santos', 51994567890, 'D005', 18, 3, 2025, 1, 2025, '0', 0.00, 1500.00),
+('Eduarda', 'Almeida', 51994567890, 'D006', 2, 1, 2025, 1, 2025, '1', 0.20, 1200.00),
+('Felipe', 'Costa', 61995678901, 'D007', 27, 2, 2025, 2, 2025, '0', 0.00, 1500.00),
+('Gabriela', 'Ferreira', 71996789012, 'D008', 8, 3, 2025, 1, 2025, '0', 0.15, 1275.00),
+('Henrique', 'Pereira', 81997890123, 'D009', 30, 1, 2025, 1, 2025, '1', 0.35, 975.00),
+('Isabela', 'Almeida', 91998901234, 'D010', 22, 2, 2025, 2, 2025, '0', 0.00, 1500.00),
+('João', 'Rodrigues', 11999012345, 'D011', 13, 3, 2025, 1, 2025, '0', 0.05, 1425.00),
+('Karen', 'Martins', 21990123456, 'D012', 7, 1, 2025, 2, 2025, '1', 0.40, 900.00),
+('Lucas', 'Gomes', 31991234568, 'D013', 15, 2, 2025, 1, 2025, '0', 0.00, 1500.00),
+('Mariana', 'Barbosa', 41992345678, 'D014', 9, 3, 2025, 2, 2025, '1', 0.25, 1125.00),
+('Nicolas', 'Carvalho', 51993456789, 'D015', 4, 1, 2025, 1, 2025, '0', 0.00, 1500.00),
+('Olivia', 'Moura', 61994567890, 'D016', 17, 2, 2025, 2, 2025, '0', 0.10, 1350.00),
+('Paulo', 'Ribeiro', 71995678901, 'D017', 29, 3, 2025, 1, 2025, '1', 0.30, 1050.00),
+('Queila', 'Dias', 81996789012, 'D018', 11, 1, 2025, 1, 2025, '0', 0.00, 1500.00),
+('Ricardo', 'Teixeira', 91997890123, 'D019', 6, 2, 2025, 2, 2025, '1', 0.45, 825.00),
+('Sara', 'Nunes', 11998901234, 'D020', 23, 3, 2025, 1, 2025, '0', 0.00, 1500.00),
+('Thiago', 'Vieira', 21999012345, 'D021', 14, 1, 2025, 1, 2025, '0', 0.20, 1200.00),
+('Ursula', 'Batista', 31990123456, 'D022', 21, 2, 2025, 2, 2025, '1', 0.35, 975.00),
+('Vinicius', 'Lopes', 41991234567, 'D023', 3, 3, 2025, 1, 2025, '0', 0.00, 1500.00),
+('Wesley', 'Cardoso', 51992345678, 'D024', 16, 1, 2025, 1, 2025, '1', 0.50, 750.00),
+('Ximena', 'Farias', 61993456789, 'D025', 28, 2, 2025, 2, 2025, '0', 0.00, 1500.00),
+('Yuri', 'Monteiro', 71994567890, 'D026', 19, 3, 2025, 1, 2025, '1', 0.40, 900.00),
+('Zilda', 'Campos', 81995678901, 'D027', 7, 1, 2025, 1, 2025, '0', 0.00, 1500.00),
+('Anderson', 'Rocha', 91996789012, 'D028', 24, 2, 2025, 2, 2025, '0', 0.15, 1275.00),
+('Beatriz', 'Melo', 11997890123, 'D029', 10, 3, 2025, 1, 2025, '1', 0.30, 1050.00),
+('Caio', 'Pinto', 21998901234, 'D030', 5, 1, 2025, 1, 2025, '0', 0.00, 1500.00),
+('Debora', 'Castro', 31999012345, 'D031', 22, 2, 2025, 2, 2025, '1', 0.25, 1125.00);
+
+INSERT INTO MATRICULANOTA (
+  Nome, Sobrenome, Telefone, Cod_disciplina,
+  Dia_Matricula, Mes_Matricula, Ano_Matricula,
+  Tipo_Nota, Nota
+) VALUES
+('Ana', 'Silva', 11987654321, 'D001', 10, 2, 2025, 'Prova1', 8.50),
+('Bruno', 'Souza', 21998765432, 'D002', 12, 3, 2025, 'Trabalho', 7.80),
+('Carla', 'Oliveira', 31991234567, 'D003', 5, 1, 2025, 'Prova1', 9.00),
+('Daniel', 'Lima', 41993456789, 'D004', 20, 2, 2025, 'Trabalho', 6.50),
+('Eduarda', 'Santos', 51994567890, 'D005', 18, 3, 2025, 'Prova1', 8.00),
+('Eduarda', 'Almeida', 51994567890, 'D006', 2, 1, 2025, 'Trabalho', 7.00),
+('Felipe', 'Costa', 61995678901, 'D007', 27, 2, 2025, 'Prova1', 9.20),
+('Gabriela', 'Ferreira', 71996789012, 'D008', 8, 3, 2025, 'Trabalho', 6.90),
+('Henrique', 'Pereira', 81997890123, 'D009', 30, 1, 2025, 'Prova1', 8.75),
+('Isabela', 'Almeida', 91998901234, 'D010', 22, 2, 2025, 'Trabalho', 7.30),
+
+('João', 'Rodrigues', 11999012345, 'D011', 13, 3, 2025, 'Prova1', 8.10),
+('Karen', 'Martins', 21990123456, 'D012', 7, 1, 2025, 'Trabalho', 9.00),
+('Lucas', 'Gomes', 31991234568, 'D013', 15, 2, 2025, 'Prova1', 7.60),
+('Mariana', 'Barbosa', 41992345678, 'D014', 9, 3, 2025, 'Trabalho', 8.50),
+('Nicolas', 'Carvalho', 51993456789, 'D015', 4, 1, 2025, 'Prova1', 6.80),
+('Olivia', 'Moura', 61994567890, 'D016', 17, 2, 2025, 'Trabalho', 7.90),
+('Paulo', 'Ribeiro', 71995678901, 'D017', 29, 3, 2025, 'Prova1', 9.40),
+('Queila', 'Dias', 81996789012, 'D018', 11, 1, 2025, 'Trabalho', 7.10),
+('Ricardo', 'Teixeira', 91997890123, 'D019', 6, 2, 2025, 'Prova1', 8.80),
+('Sara', 'Nunes', 11998901234, 'D020', 23, 3, 2025, 'Trabalho', 7.20),
+
+('Thiago', 'Vieira', 21999012345, 'D021', 14, 1, 2025, 'Prova1', 8.00),
+('Ursula', 'Batista', 31990123456, 'D022', 21, 2, 2025, 'Trabalho', 6.70),
+('Vinicius', 'Lopes', 41991234567, 'D023', 3, 3, 2025, 'Prova1', 7.85),
+('Wesley', 'Cardoso', 51992345678, 'D024', 16, 1, 2025, 'Trabalho', 9.10),
+('Ximena', 'Farias', 61993456789, 'D025', 28, 2, 2025, 'Prova1', 8.30),
+('Yuri', 'Monteiro', 71994567890, 'D026', 19, 3, 2025, 'Trabalho', 7.95),
+('Zilda', 'Campos', 81995678901, 'D027', 7, 1, 2025, 'Prova1', 8.60),
+('Anderson', 'Rocha', 91996789012, 'D028', 24, 2, 2025, 'Trabalho', 7.50),
+('Beatriz', 'Melo', 11997890123, 'D029', 10, 3, 2025, 'Prova1', 9.00),
+('Caio', 'Pinto', 21998901234, 'D030', 5, 1, 2025, 'Trabalho', 6.95);
+
+INSERT INTO MENSAGEM (
+    NomeA, SobrenomeA, TelefoneA,
+    NomeAu, SobrenomeAu, TelefoneAu,
+    TimestampM, Conteudo
+) VALUES
+('Lucas', 'Gomes', 31991234568, 'Ana', 'Silva', 11987654321, '2025-06-22 08:00:00', 'Professora Ana, tenho dúvidas sobre o trabalho.'),
+('Mariana', 'Barbosa', 41992345678, 'Bruno', 'Souza', 21998765432, '2025-06-22 09:00:00', 'Gostaria de saber sobre a revisão de prova.'),
+('Nicolas', 'Carvalho', 51993456789, 'Carla', 'Oliveira', 31991234567, '2025-06-22 10:00:00', 'Quando será a próxima aula?'),
+('Olivia', 'Moura', 61994567890, 'Daniel', 'Lima', 41993456789, '2025-06-22 11:00:00', 'Tem materiais complementares disponíveis?'),
+('Paulo', 'Ribeiro', 71995678901, 'Eduarda', 'Santos', 51994567890, '2025-06-22 12:00:00', 'Quais tópicos cairão na prova?'),
+('Queila', 'Dias', 81996789012, 'Felipe', 'Costa', 61995678901, '2025-06-22 13:00:00', 'Posso entregar a atividade por e-mail?'),
+('Ricardo', 'Teixeira', 91997890123, 'Gabriela', 'Ferreira', 71996789012, '2025-06-22 14:00:00', 'Haverá aula de reforço?'),
+('Sara', 'Nunes', 11998901234, 'Henrique', 'Pereira', 81997890123, '2025-06-22 15:00:00', 'Poderia explicar o exercício 3?'),
+('Thiago', 'Vieira', 21999012345, 'Isabela', 'Almeida', 91998901234, '2025-06-22 16:00:00', 'Gostaria de feedback sobre meu trabalho.'),
+('Ursula', 'Batista', 31990123456, 'João', 'Rodrigues', 11999012345, '2025-06-22 17:00:00', 'A dúvida é sobre o tema da aula passada.'),
+
+('Vinicius', 'Lopes', 41991234567, 'Karen', 'Martins', 21990123456, '2025-06-22 18:00:00', 'Como acessar o material online?'),
+('Wesley', 'Cardoso', 51992345678, 'Lucas', 'Gomes', 31991234568, '2025-06-22 19:00:00', 'Professor, quando será a entrega final?'),
+('Ximena', 'Farias', 61993456789, 'Mariana', 'Barbosa', 41992345678, '2025-06-22 20:00:00', 'Preciso de orientação para a apresentação.'),
+('Yuri', 'Monteiro', 71994567890, 'Nicolas', 'Carvalho', 51993456789, '2025-06-23 08:00:00', 'Qual é o critério de avaliação?'),
+('Zilda', 'Campos', 81995678901, 'Olivia', 'Moura', 61994567890, '2025-06-23 09:00:00', 'Quais capítulos são obrigatórios?'),
+('Anderson', 'Rocha', 91996789012, 'Paulo', 'Ribeiro', 71995678901, '2025-06-23 10:00:00', 'Podemos fazer uma reunião?'),
+('Beatriz', 'Melo', 11997890123, 'Queila', 'Dias', 81996789012, '2025-06-23 11:00:00', 'Dúvidas sobre o conteúdo da aula.'),
+('Caio', 'Pinto', 21998901234, 'Ricardo', 'Teixeira', 91997890123, '2025-06-23 12:00:00', 'Haverá aula extra nesta semana?'),
+('Debora', 'Castro', 31999012345, 'Sara', 'Nunes', 11998901234, '2025-06-23 13:00:00', 'Qual a bibliografia recomendada?'),
+('Eduarda', 'Santos', 51994567890, 'Thiago', 'Vieira', 21999012345, '2025-06-23 14:00:00', 'Quando será a próxima entrega?');
