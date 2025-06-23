@@ -18,6 +18,16 @@ CREATE TABLE USUARIO (
     CONSTRAINT pk_usuario PRIMARY KEY (Nome, Sobrenome, Telefone)
 );
 
+CREATE TABLE UNIDADEESCOLA (
+    Nome_Unidade VARCHAR(50) NOT NULL,
+    Cidade VARCHAR(50) NOT NULL,
+    Estado VARCHAR(2) NOT NULL,
+    Pais VARCHAR(30) NOT NULL,
+    Bloco_Predio VARCHAR(10) NOT NULL,
+
+    CONSTRAINT pk_unidade_escola PRIMARY KEY (Nome_Unidade)
+);
+
 CREATE TABLE ALUNO (
     Nome_Unidade VARCHAR(50) NOT NULL,
     Nome VARCHAR(50),
