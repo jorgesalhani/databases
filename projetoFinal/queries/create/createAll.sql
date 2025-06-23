@@ -22,7 +22,7 @@ CREATE TABLE ALUNO (
     Nome_Unidade VARCHAR(50) NOT NULL,
     Nome VARCHAR(50),
     Sobrenome VARCHAR(50),
-    Telefone VARCHAR(20),
+    Telefone NUMERIC(14),
     PRIMARY KEY (Nome, Sobrenome, Telefone),
     FOREIGN KEY (Nome, Sobrenome, Telefone)
         REFERENCES Usuario (Nome, Sobrenome, Telefone)
@@ -62,7 +62,7 @@ CREATE TABLE PROFESSOR (
     Nome_Unidade VARCHAR(50) NOT NULL,
     Nome VARCHAR(50),
     Sobrenome VARCHAR(50),
-    Telefone VARCHAR(20),
+    Telefone NUMERIC(15),
     Titulo VARCHAR(20),
     Especialidade VARCHAR (30), 
     PRIMARY KEY (Nome, Sobrenome, Telefone),
