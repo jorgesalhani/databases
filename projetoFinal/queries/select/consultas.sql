@@ -111,3 +111,26 @@ WHERE NOT EXISTS ( -- verifica se tem 1 que esta em curso e nao na selecao de ma
 );
 
 
+-- comparacao desempenho alunos com bolsa e sem bolsa para a materia d003
+
+SELECT 
+  CASE 
+    WHEN M.Bolsa = 1 THEN 'Com Bolsa'
+    ELSE 'Sem Bolsa'
+  END AS Situacao_Bolsa,
+  AVG(N.Nota) AS Media_Notas
+FROM MATRICULA M
+JOIN MATRICULANOTA N
+  ON M.Nome = N.Nome
+  AND M.Sobrenome = N.Sobrenome
+  AND M.Telefone = N.Telefone
+  AND M.Cod_disciplina = N.Cod_disciplina
+  AND M.Dia_Matricula = N.Dia_Matricula
+  AND M.Mes_Matricula = N.Mes_Matricula
+  AND M.Ano_Matricula = N.Ano_Matricula
+WHERE M.Cod_disciplina = 'D003'
+GROUP BY 
+  CASE 
+    WHEN M.Bolsa = 1 THEN 'Com Bolsa'
+    ELSE 'Sem Bolsa'
+  END;
