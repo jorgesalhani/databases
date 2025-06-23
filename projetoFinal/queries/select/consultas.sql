@@ -109,3 +109,5 @@ WHERE NOT EXISTS ( -- verifica se tem 1 que esta em curso e nao na selecao de ma
         AND M.Cod_disciplina = CD.Codigo_Disc
     )
 );
+
+
