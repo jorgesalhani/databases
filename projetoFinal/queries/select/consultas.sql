@@ -189,3 +189,20 @@ GROUP BY
 ORDER BY 
     Total_Disciplinas DESC
 LIMIT 10;
+
+
+--- alunos que são de fora do estado de sao paulo
+
+SELECT 
+    A.Nome,
+    A.Sobrenome,
+    A.Telefone,
+    U.Endereco_estado
+FROM 
+    ALUNO A
+JOIN 
+    USUARIO U ON A.Nome = U.Nome 
+             AND A.Sobrenome = U.Sobrenome 
+             AND A.Telefone = U.Telefone
+WHERE 
+    U.Endereco_estado <> 'SP';

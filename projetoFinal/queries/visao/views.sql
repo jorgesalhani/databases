@@ -55,3 +55,31 @@ JOIN -- pega os professores
     -- LEFT JOIN com pré-requisitos de curso (pode nao)
 LEFT JOIN
     PREREQCURSO PRC ON C.NomeCurso = PRC.NomeCurso AND C.Codigo_Curso = PRC.CodigoCurso
+
+
+-- Visão das disciplinas, suas regras, infras e materiais. Tudo com left join pq não é obrigatório ter
+
+CREATE VIEW visao_disciplinas_complementos AS
+SELECT
+    D.Codigo_Disc,
+    D.Nome AS Nome_Disciplina,
+    D.Nome_Unidade,
+
+    R.Tipo_Regra,
+    I.Tipo_Infra,
+    M.Tipo_Material
+
+FROM
+    DISCIPLINA D
+
+-- LEFT JOIN com regras da disciplina
+LEFT JOIN REGRADISCIPLINA R
+    ON D.Codigo_Disc = R.Codigo_Disc
+
+-- LEFT JOIN com infraestrutura associada
+LEFT JOIN INFRADISCIPLINA I
+    ON D.Codigo_Disc = I.Codigo_Disc
+
+-- LEFT JOIN com materiais associados
+LEFT JOIN MATERIALDISCIPLINA M
+    ON D.Codigo_Disc = M.Codigo_Disc;

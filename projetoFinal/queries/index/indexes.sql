@@ -8,3 +8,5 @@ ON MATRICULA (Semestre, Ano_Letivo);
 CREATE INDEX idx_matriculanota_aluno 
 ON MATRICULANOTA (Nome, Sobrenome, Telefone);
 
+CREATE INDEX idx_usuario_estado 
+ON USUARIO (Endereco_Estado);
