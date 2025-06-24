@@ -10,3 +10,6 @@ ON MATRICULANOTA (Nome, Sobrenome, Telefone);
 
 CREATE INDEX idx_usuario_estado 
 ON USUARIO (Endereco_Estado);
+
+CREATE INDEX idx_autor_msg 
+ON MENSAGEM (Nome_Au,SobrenomeAu);
