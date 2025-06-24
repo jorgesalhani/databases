@@ -15,9 +15,9 @@ FROM
 JOIN 
     DISCIPLINA D ON M.Cod_disciplina = D.Codigo_Disc
 JOIN 
-    RESPONSAVEL R ON D.Codigo_Disc = R.Cod_disciplina
+    MINISTRA MI ON D.Codigo_Disc = MI.Cod_disciplina
 JOIN 
-    PROFESSOR P ON R.Nome = P.Nome AND R.Sobrenome = P.Sobrenome AND R.Telefone = P.Telefone
+    PROFESSOR P ON MI.Nome = P.Nome AND MI.Sobrenome = P.Sobrenome AND MI.Telefone = P.Telefone
 WHERE 
     M.Semestre = 1 AND M.Ano_Letivo = 2024;
 
