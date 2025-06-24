@@ -48,16 +48,6 @@ CREATE TABLE SALA(
     CONSTRAINT pk_sala PRIMARY KEY (Nome)
 );
 
-CREATE TABLE UNIDADEESCOLA (
-    Nome_Unidade VARCHAR(50) NOT NULL,
-    Cidade VARCHAR(50) NOT NULL,
-    Estado VARCHAR(2) NOT NULL,
-    Pais VARCHAR(30) NOT NULL,
-    Bloco_Predio VARCHAR(10) NOT NULL,
-
-    CONSTRAINT pk_unidade_escola PRIMARY KEY (Nome_Unidade)
-);
-
 CREATE TABLE DISCIPLINA (
     Nome                        VARCHAR(50)    NOT NULL,     
     Codigo_Disc                 VARCHAR(10)    NOT NULL,      
