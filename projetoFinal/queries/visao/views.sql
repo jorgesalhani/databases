@@ -8,7 +8,7 @@ SELECT
     D.Nome AS Nome_Disciplina,
     D.Nome_Unidade AS Unidade_Escola,
     P.Nome AS Nome_Professor,
-    P.Sobrenome AS Sobrenome_Professor
+    P.Sobrenome AS Sobrenome_Professor,
     P.Especialidade AS Especialidade_Professor
 FROM 
     MATRICULA M
@@ -51,10 +51,10 @@ JOIN -- junta com as tabela de disciplina
 JOIN --junta com a de ministra
     MINISTRA M ON D.Codigo_Disc = M.Cod_disciplina
 JOIN -- pega os professores
-    PROFESSOR P ON M.Nome = P.Nome AND M.Sobrenome = P.Sobrenome AND M.Telefone = P.Telefone;
+    PROFESSOR P ON M.Nome = P.Nome AND M.Sobrenome = P.Sobrenome AND M.Telefone = P.Telefone
     -- LEFT JOIN com pré-requisitos de curso (pode nao)
 LEFT JOIN
-    PREREQCURSO PRC ON C.NomeCurso = PRC.NomeCurso AND C.Codigo_Curso = PRC.CodigoCurso
+    PREREQCURSO PRC ON C.NomeCurso = PRC.NomeCurso AND C.Codigo_Curso = PRC.CodigoCurso;
 
 
 -- Visão das disciplinas, suas regras, infras e materiais. Tudo com left join pq não é obrigatório ter
