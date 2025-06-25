@@ -39,7 +39,7 @@ Caminhar para arquivo da atividade
 cd ./atividade3/
 ```
 
-Inserir comando SQL em textBox.sql
+Inserir comando SQL em textBox.sql ou mudar o path para o .sql desejado
 
 Executar script
 ```bash
