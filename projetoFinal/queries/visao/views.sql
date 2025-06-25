@@ -21,7 +21,7 @@ JOIN
 WHERE 
     M.Semestre = 1 AND M.Ano_Letivo = 2024;
 
-
+-- select * from alunos_disciplinas_professores_20241
 
 -- visao completa do curso: disciplinas que o compõe, os professores que lecionam e outros cursos que são pre-req dele
 CREATE VIEW visao_curricular_simplificada AS
@@ -56,6 +56,7 @@ JOIN -- pega os professores
 LEFT JOIN
     PREREQCURSO PRC ON C.NomeCurso = PRC.NomeCurso AND C.Codigo_Curso = PRC.CodigoCurso;
 
+-- select * from visao_curricular_simplificada;
 
 -- Visão das disciplinas, suas regras, infras e materiais. Tudo com left join pq não é obrigatório ter
 
@@ -83,3 +84,5 @@ LEFT JOIN INFRADISCIPLINA I
 -- LEFT JOIN com materiais associados
 LEFT JOIN MATERIALDISCIPLINA M
     ON D.Codigo_Disc = M.Codigo_Disc;
+
+-- select * from visao_disciplinas_complementos;
