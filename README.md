@@ -36,7 +36,7 @@ Arquivo 'db_config.json' na raiz do projeto no formato
 ## Utilização
 Caminhar para arquivo da atividade
 ```bash
-cd ./atividade3/
+cd ./projetoFinal/
 ```
 
 Inserir comando SQL em textBox.sql ou mudar o path para o .sql desejado
