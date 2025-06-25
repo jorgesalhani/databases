@@ -16,4 +16,4 @@ CREATE TABLE USUARIO (
     Senha                       VARCHAR(255)   NOT NULL,
 
     PRIMARY KEY (Nome, Sobrenome, Telefone)
-);
+); 

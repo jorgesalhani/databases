@@ -1,4 +1,4 @@
--- Todos os alunos matriculados na materia C001
+-- Todos os alunos matriculados na materia BIO101
 
 SELECT Nome, Sobrenome, Telefone FROM Matricula 
 WHERE Cod_disciplina = 'BIO101' AND Semestre = 2 AND Ano_Letivo = 2019;
