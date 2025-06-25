@@ -2131,6 +2131,7 @@ INSERT INTO MATRICULA (
     Dia_Matricula, Mes_Matricula, Ano_Matricula,
     Semestre, Ano_Letivo, Bolsa, Desconto, TAXA
 ) VALUES
+('Caleb', 'da Rocha', 55619901613, 'POR126', 5, 1, 2017, 1, 2017, '1', 0.29, 864.63),
 ('Caleb', 'da Rocha', 55619901613, 'POR126', 5, 12, 2018, 2, 2018, '1', 0.29, 864.63),
 ('Amanda', 'Azevedo', 55419578309, 'GEO137', 18, 4, 2022, 1, 2022, '1', 0.06, 590.72),
 ('Brenda', 'Machado', 55849129135, 'INF139', 20, 7, 2024, 1, 2024, '0', 0.00, 1200.21),

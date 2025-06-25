@@ -1,12 +1,11 @@
 -- Todos os alunos matriculados na materia C001
 
 SELECT Nome, Sobrenome, Telefone FROM Matricula 
-WHERE Cod_disciplina = 'C001' AND Semestre = 2 AND Ano_Letivo = 2024;
+WHERE Cod_disciplina = 'BIO101' AND Semestre = 2 AND Ano_Letivo = 2019;
 
+-- Media de um semestre do aluno Caleb da Rocha 2018/2
 
--- Media de um semestre da aluna Ana Silva (2024/1)
-
-SELECT AVG(Nota) AS Media_Notas
+SELECT AVG(MN.Nota) AS Media_Notas
 FROM MATRICULANOTA MN
 JOIN MATRICULA M
   ON MN.Nome = M.Nome
@@ -16,14 +15,13 @@ JOIN MATRICULA M
   AND MN.Dia_Matricula = M.Dia_Matricula
   AND MN.Mes_Matricula = M.Mes_Matricula
   AND MN.Ano_Matricula = M.Ano_Matricula
-WHERE MN.Nome = 'Ana'
-  AND MN.Sobrenome = 'Silva'
-  AND MN.Telefone = 11987654321
-  AND M.Semestre = 1
-  AND M.Ano_Letivo = 2024
+WHERE MN.Nome = 'Caleb'
+  AND MN.Sobrenome = 'da Rocha'
+  AND MN.Telefone = 55619901613
+  AND M.Semestre = 2
+  AND M.Ano_Letivo = 2018;
 
-
---Historico escolar da Ana Silva
+--Historico escolar do Caleb da Rocha
 SELECT 
   M.Cod_disciplina,
   AVG(N.Nota) AS Media_Nota
@@ -36,10 +34,9 @@ JOIN MATRICULANOTA N
   AND M.Dia_Matricula = N.Dia_Matricula
   AND M.Mes_Matricula = N.Mes_Matricula
   AND M.Ano_Matricula = N.Ano_Matricula
-WHERE M.Nome = 'Ana'
-  AND M.Sobrenome = 'Silva'
+WHERE M.Nome = 'Caleb'
+  AND M.Sobrenome = 'da Rocha'
 GROUP BY M.Cod_disciplina;
-
 
 -- 5 melhores alunos conforme media semestral de todos os anos
 
@@ -135,7 +132,7 @@ WHERE NOT EXISTS ( -- verifica se tem 1 que esta em curso e nao na selecao de ma
 SELECT 
   M.Cod_disciplina,
   CASE 
-    WHEN M.Bolsa = 1 THEN 'Com Bolsa'
+    WHEN M.Bolsa::text = '1' THEN 'Com Bolsa'
     ELSE 'Sem Bolsa'
   END AS Situacao_Bolsa,
   AVG(N.Nota) AS Media_Notas
@@ -151,7 +148,7 @@ JOIN MATRICULANOTA N
 GROUP BY 
   M.Cod_disciplina,
   CASE 
-    WHEN M.Bolsa = 1 THEN 'Com Bolsa'
+    WHEN M.Bolsa::text = '1' THEN 'Com Bolsa'
     ELSE 'Sem Bolsa'
   END
 ORDER BY M.Cod_disciplina, Situacao_Bolsa;
